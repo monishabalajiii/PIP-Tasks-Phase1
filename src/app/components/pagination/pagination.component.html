@@ -1,0 +1,114 @@
+<div class="main-container">
+  <!-- Header with Search -->
+  <div class="header">
+    <div class="title-section">
+      <mat-icon class="title-icon">people</mat-icon>
+      <div class="title-text">
+        <h2>User Management</h2>
+        <p>Manage and view user data with pagination</p>
+      </div>
+    </div>
+    
+    <div class="search-section">
+      <div class="custom-search-wrapper">
+        <input class="custom-search-input" 
+               [(ngModel)]="searchTerm" 
+               (keyup.enter)="onSearch()"
+               (input)="onSearch()"
+               placeholder="Name, email, or company">
+        <mat-icon class="search-clear-icon" 
+                  [class.clickable]="searchTerm"
+                  (click)="searchTerm ? clearSearch() : null">
+          {{ searchTerm ? 'clear' : 'search' }}
+        </mat-icon>
+      </div>
+      
+      <button mat-icon-button 
+              class="refresh-btn"
+              (click)="refreshData()"
+              [disabled]="isLoading">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content">
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Loading data...</p>
+    </div>
+
+    <!-- Data Table -->
+    <div *ngIf="!isLoading" class="table-container">
+      <!-- Results Info -->
+      <div class="results-info" *ngIf="totalItems > 0">
+        <span>
+          Showing {{ (currentPage * pageSize) + 1 }} - 
+          {{ getEndIndex() }} 
+          of {{ totalItems }} results
+          <span *ngIf="searchTerm" class="search-highlight">
+            for "{{ searchTerm }}"
+          </span>
+        </span>
+      </div>
+
+      <!-- Simple Table -->
+      <table mat-table [dataSource]="dataSource" class="simple-table" *ngIf="dataSource.length > 0">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+        </ng-container>
+
+        <!-- Phone Column -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef>Phone</th>
+          <td mat-cell *matCellDef="let user">{{ user.phone }}</td>
+        </ng-container>
+
+        <!-- Company Column -->
+        <ng-container matColumnDef="company">
+          <th mat-header-cell *matHeaderCellDef>Company</th>
+          <td mat-cell *matCellDef="let user">{{ user.company }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+      </table>
+
+      <!-- No Data Message -->
+      <div *ngIf="dataSource.length === 0" class="no-data">
+        <mat-icon class="no-data-icon">inbox</mat-icon>
+        <h3>No data found</h3>
+        <p *ngIf="searchTerm">Try adjusting your search criteria</p>
+        <p *ngIf="!searchTerm">No users available</p>
+      </div>
+
+      <!-- Simple Pagination -->
+      <mat-paginator 
+        *ngIf="totalItems > 0"
+        [length]="totalItems"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20]"
+        [pageIndex]="currentPage"
+        (page)="onPageChange($event)"
+        showFirstLastButtons
+        class="simple-paginator">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

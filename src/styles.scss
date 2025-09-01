@@ -1,0 +1,405 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "tailwind.css";
+
+/* =============================================================
+   COMPLETE THEME SYSTEM - LIGHT & DARK MODES
+============================================================= */
+
+/* LIGHT THEME - Clean, bright, professional */
+.light-theme {
+  /* Base Colors */
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #e2e8f0;
+  --bg-tertiary: #cbd5e1;
+  --bg-hover: #f8fafc;
+  --bg-active: #cbd5e1;
+  
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  
+  /* Border Colors */
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-focus: #3b82f6;
+  
+  /* Brand Colors */
+  --primary: #64748b;
+  --primary-hover: #475569;
+  --primary-light: #e2e8f0;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  
+  /* Component Specific */
+  --navbar-bg: #f1f5f9;
+  --navbar-text: #1e293b;
+  --navbar-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  
+  --sidebar-bg: #f8fafc;
+  --sidebar-text: #475569;
+  --sidebar-border: #e2e8f0;
+  --sidebar-hover: #f1f5f9;
+  --sidebar-active: #d1d5db;
+  
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: var(--shadow-md);
+  
+  --pricing-bg: #ffffff;
+  --pricing-border: #e2e8f0;
+  --pricing-title: #1e293b;
+  --pricing-price: #3b82f6;
+  --pricing-text: #475569;
+  --pricing-button-bg: #64748b;
+  --pricing-button-text: #ffffff;
+  --pricing-button-hover: #475569;
+  
+  --form-bg: #ffffff;
+  --form-border: #d1d5db;
+  --form-focus: #64748b;
+  --form-text: #1e293b;
+  
+  --quiz-bg: #ffffff;
+  --quiz-border: #e2e8f0;
+  --quiz-title: #1e293b;
+  --quiz-text: #475569;
+  --quiz-option-bg: #f8fafc;
+  --quiz-option-hover: #e2e8f0;
+  --quiz-option-selected: #dbeafe;
+  
+  --toggle-bg-off: #d1d5db;
+  --toggle-bg-on: #d1d5db;
+  --toggle-knob: #ffffff;
+}
+
+/* DARK THEME - Sleek, modern, high contrast */
+.dark-theme {
+  /* Base Colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-hover: #475569;
+  --bg-active: #64748b;
+  
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --text-inverse: #0f172a;
+  
+  /* Border Colors */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --border-focus: #60a5fa;
+  
+  /* Brand Colors */
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --primary-light: #1e3a8a;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6);
+  
+  /* Component Specific */
+  --navbar-bg: #1e293b;
+  --navbar-text: #f8fafc;
+  --navbar-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #e2e8f0;
+  --sidebar-border: #334155;
+  --sidebar-hover: #334155;
+  --sidebar-active: #4b5563;
+  
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: var(--shadow-lg);
+  
+  --pricing-bg: #1e293b;
+  --pricing-border: #334155;
+  --pricing-title: #f8fafc;
+  --pricing-price: #60a5fa;
+  --pricing-text: #cbd5e1;
+  --pricing-button-bg: #60a5fa;
+  --pricing-button-text: #0f172a;
+  --pricing-button-hover: #3b82f6;
+  
+  --form-bg: #1e293b;
+  --form-border: #475569;
+  --form-focus: #60a5fa;
+  --form-text: #f8fafc;
+  
+  --quiz-bg: #1e293b;
+  --quiz-border: #334155;
+  --quiz-title: #f8fafc;
+  --quiz-text: #cbd5e1;
+  --quiz-option-bg: #334155;
+  --quiz-option-hover: #475569;
+  --quiz-option-selected: #1e3a8a;
+  
+  --toggle-bg-off: #4b5563;
+  --toggle-bg-on: #4b5563;
+  --toggle-knob: #ffffff;
+}
+
+/* =============================================================
+   GLOBAL STYLES - APPLYING THEME VARIABLES
+============================================================= */
+
+/* Base Body Styles */
+body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Global Container */
+.container, .container-fluid {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* Forms */
+.form-control {
+  background-color: var(--form-bg);
+  border: 1px solid var(--form-border);
+  color: var(--form-text);
+}
+
+.form-control:focus {
+  background-color: var(--form-bg);
+  border-color: var(--form-focus);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+  color: var(--form-text);
+}
+
+/* Navbar Override */
+.navbar {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-text) !important;
+  box-shadow: var(--navbar-shadow);
+  border: none;
+}
+
+.navbar-brand {
+  color: var(--navbar-text) !important;
+  font-weight: 700;
+}
+
+/* Text Utilities */
+.text-primary { color: var(--primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* Background Utilities */
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--bg-secondary) !important; }
+
+/* Border Utilities */
+.border { border-color: var(--border-primary) !important; }
+.border-primary { border-color: var(--border-primary) !important; }
+
+/* Shadow Utilities */
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+
+/* Custom Theme Classes */
+.theme-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.theme-button {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Scrollbar Theming */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Quiz Button Styles */
+.next-btn {
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 600 !important;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: var(--text-inverse);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* form */
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --card-bg-color: #ffffff;
+  --card-border-color: #e5e8ea;
+  --text-color: #231f20;
+  --label-color: #21231f;
+  --input-bg-color: #f9f9f9;
+  --input-text-color: #231f20;
+  --error-color: #f44336;
+  --primary-color: #2196f3;
+  --primary-hover-color: #1976d2;
+  --button-text-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #090a0d;
+  --card-bg-color: #1b1f27;
+  --card-border-color: #1b2a6f;
+  --text-color: #ffffff;
+  --label-color: #ffffff;
+  --input-bg-color: #121318;
+  --input-text-color: #ffffff;
+  --error-color: #ef5350;
+  --error-color: #f44336;
+  --primary-color: #64b5f6;
+  --primary-hover-color: #42a5f5;
+  --button-text-color: #000000;
+}
+.error-text {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 14px;
+  font-weight: 600; /* optional to make it more visible */
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --form-bg-color: #ffffff;
+  --form-border-color: #e5e8ea;
+  --form-label-color: #21231f;
+  --form-input-bg: #f8f9fa;
+  --form-input-text: #231f20;
+  --form-placeholder: #6c757d;
+  --form-error-color: #f44336; /* error red */
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --form-bg-color: #1e1e1e;
+  --form-border-color: #333;
+  --form-label-color: #ffffff;
+  --form-input-bg: #2a2a2a;
+  --form-input-text: #ffffff;
+  --form-placeholder: #aaaaaa;
+  --form-error-color: #f44336; /* same red in dark mode */
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+

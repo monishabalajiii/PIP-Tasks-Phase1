@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Fruits Dropdown</h4>
+      <br>
+      <app-dropdown
+        [options]="fruitOptions"
+        placeholder="Choose a fruit"
+        (selectionChange)="onFruitSelection($event)">
+      </app-dropdown>
+      <p class="mt-2">Selected: {{ selectedFruit }}</p>
+    </div>
+  </div>
+</div>

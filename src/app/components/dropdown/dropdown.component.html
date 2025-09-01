@@ -1,0 +1,28 @@
+<div class="custom-dropdown">
+  <!-- Dropdown Button -->
+  <button 
+    type="button" 
+    class="dropdown-btn btn btn-outline-secondary w-100"
+    [attr.aria-expanded]="isOpen"
+    [disabled]="disabled"
+    (click)="toggle()">
+    <span class="dropdown-text">
+      {{ selectedOption ? selectedOption.label : placeholder }}
+    </span>
+    <span class="dropdown-arrow">▼</span>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <ul class="dropdown-menu" [class.show]="isOpen">
+    <li *ngFor="let option of options" class="dropdown-item-wrapper">
+      <button 
+        type="button"
+        class="dropdown-item"
+        [disabled]="option.disabled"
+        (click)="selectOption(option)"
+        [class.selected]="selectedOption?.value === option.value">
+        {{ option.label }}
+      </button>
+    </li>
+  </ul>
+</div>

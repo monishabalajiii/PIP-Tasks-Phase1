@@ -1,0 +1,952 @@
+/* Pagination Component Theme Styles */
+.main-container {
+  padding: 20px;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  color: var(--text-primary);
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  min-height: 80px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-primary);
+}
+
+.header:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.title-text h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.title-text p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-input {
+  background: var(--form-bg);
+  border: 1px solid var(--form-border);
+  color: var(--form-text);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--form-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Content Area */
+.content-area {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+}
+
+.content-area:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Table Styles */
+.table {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.table thead th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-primary);
+  padding: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.table tbody td {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-primary);
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.table tbody tr:hover td {
+  background: #f8f9fa;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-active {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.status-inactive {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.status-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-primary);
+}
+
+.pagination-info {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+
+.page-item {
+  list-style: none;
+}
+
+.page-link {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.page-link:hover {
+  background: #6c757d;
+  color: var(--text-inverse);
+  border-color: #6c757d;
+  transform: translateY(-1px);
+}
+
+.page-item.active .page-link {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-color: var(--primary);
+}
+
+.page-item.disabled .page-link {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border-color: var(--border-primary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Action Buttons */
+.action-button {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.action-button.danger {
+  background: var(--danger);
+}
+
+.action-button.danger:hover {
+  background: #dc2626;
+}
+
+.action-button.success {
+  background: var(--success);
+}
+
+.action-button.success:hover {
+  background: #059669;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
+/* Custom Search Input Wrapper */
+.custom-search-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-secondary);
+  border-radius: 24px;
+  background-color: var(--background-tertiary);
+  padding: 0 16px;
+  height: 48px;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 400px;
+  min-width: 250px;
+}
+
+.custom-search-wrapper:hover {
+  border-color: var(--primary-color);
+  background-color: var(--background-primary);
+  box-shadow: 0 2px 8px var(--shadow-primary);
+}
+
+.custom-search-wrapper:focus-within {
+  border-color: var(--primary-color);
+  background-color: var(--background-primary);
+  box-shadow: 0 2px 8px var(--shadow-primary);
+}
+
+/* Custom Search Input */
+.custom-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-primary);
+  flex: 1;
+  height: 100%;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.custom-search-input::placeholder {
+  color: var(--text-disabled);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Icon styling */
+.search-clear-icon {
+  color: var(--text-secondary);
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin: 8px;
+  transition: color 0.2s ease;
+}
+
+.search-clear-icon.clickable {
+  cursor: pointer;
+  color: var(--text-disabled);
+}
+
+.search-clear-icon.clickable:hover {
+  color: var(--primary-color);
+  background-color: var(--hover-primary);
+  border-radius: 50%;
+}
+
+/* Refresh button */
+.refresh-btn {
+  background-color: var(--background-tertiary) !important;
+  border: 1px solid var(--border-secondary) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background-color: var(--background-primary) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 2px 8px var(--shadow-primary);
+}
+
+.refresh-btn mat-icon {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.refresh-btn:hover:not(:disabled) mat-icon {
+  color: var(--primary-color);
+}
+
+.refresh-btn:disabled {
+  background-color: var(--background-secondary) !important;
+  border-color: var(--border-light) !important;
+}
+
+.refresh-btn:disabled mat-icon {
+  color: var(--text-disabled);
+}
+
+/* Content Area */
+.content {
+  background: var(--background-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-light);
+  padding: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.loading p {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Table Container */
+.table-container {
+  width: 100%;
+}
+
+.results-info {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-primary);
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-highlight {
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Simple Table */
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-mdc-header-row {
+  background-color: var(--background-tertiary);
+  border-bottom: 2px solid var(--border-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-primary);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.mat-mdc-cell {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.no-data-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: var(--text-disabled);
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.no-data h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.no-data p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* Simple Paginator */
+.simple-paginator {
+  margin-top: 20px;
+  border-top: 1px solid var(--border-primary);
+  background-color: var(--background-tertiary);
+  border-radius: 0 0 8px 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Angular Material Paginator Theme Support */
+.mat-mdc-paginator {
+  background-color: var(--background-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-mdc-select-value,
+.mat-mdc-paginator .mat-mdc-paginator-range-label {
+  color: var(--text-primary) !important;
+}
+
+/* Fix dropdown arrow spacing */
+::ng-deep .mat-mdc-paginator .mat-mdc-select {
+  padding-right: 8px !important;
+  min-width: 80px !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-select-trigger {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-form-field {
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-text-field-wrapper {
+  background-color: #ffffff !important;
+  padding-right: 8px !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-select-arrow-wrapper {
+  position: absolute !important;
+  right: 1px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-select-arrow {
+  margin-right: 1px !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-form-field-infix {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-form-field-flex {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-mdc-paginator .mat-mdc-select-value-text {
+  padding-right: 4px !important;
+}
+
+/* Dropdown panel styling */
+::ng-deep .mat-mdc-select-panel {
+  background-color: #ffffff !important;
+  padding: 8px 0 !important;
+}
+
+::ng-deep .mat-mdc-option {
+  background-color: #ffffff !important;
+  padding: 12px 16px !important;
+  min-height: 48px !important;
+}
+
+::ng-deep .mat-mdc-option:hover {
+  background-color: #f5f5f5 !important;
+}
+
+::ng-deep .mat-mdc-option.mat-mdc-option-active {
+  background-color: #e3f2fd !important;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button:disabled {
+  color: var(--text-disabled) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search-section {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  
+  .custom-search-wrapper {
+    min-width: 200px;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .search-section {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .custom-search-wrapper {
+    min-width: unset;
+    max-width: unset;
+    flex: 1;
+  }
+
+  .simple-table {
+    font-size: 12px;
+  }
+
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-text h2 {
+    font-size: 20px;
+  }
+
+  .search-section {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  /* Hide some columns on very small screens */
+  .simple-table .mat-column-phone,
+  .simple-table .mat-column-company {
+    display: none;
+  }
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Dark theme for table */
+.dark-theme .table-row:hover {
+  background-color: #404040 !important;
+}
+
+.dark-theme .mat-mdc-header-row {
+  background-color: #3d3d3d;
+  border-bottom-color: #555;
+}
+
+.dark-theme .mat-mdc-header-cell {
+  color: #ffffff;
+  border-bottom-color: #555;
+}
+
+.dark-theme .mat-mdc-cell {
+  color: #ffffff;
+  border-bottom-color: #444;
+}
+
+.dark-theme .table-row:hover {
+  background-color: #404040 !important;
+}
+
+.dark-theme .table tbody tr:hover {
+  background-color: #404040 !important;
+}
+
+.dark-theme .table tbody tr:hover td {
+  background-color: #404040 !important;
+}
+
+/* Dark theme Material Design table row hover */
+.dark-theme .mat-mdc-row:hover {
+  background-color: #404040 !important;
+}
+
+.dark-theme .mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #404040 !important;
+}
+
+/* Additional ::ng-deep overrides for dark theme table hover */
+::ng-deep .dark-theme .mat-mdc-table .mat-mdc-row:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-table .mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .table tbody tr:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .table tbody tr:hover td {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .table-row:hover {
+  background-color: #404040 !important;
+}
+
+/* Force override all possible table hover states in dark theme */
+::ng-deep .dark-theme tbody tr:hover,
+::ng-deep .dark-theme .mat-row:hover,
+::ng-deep .dark-theme .mat-mdc-row:hover,
+::ng-deep .dark-theme tr:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme tbody tr:hover td,
+::ng-deep .dark-theme .mat-cell:hover,
+::ng-deep .dark-theme .mat-mdc-cell:hover,
+::ng-deep .dark-theme td:hover {
+  background-color: #404040 !important;
+}
+
+/* Most specific selectors for Angular Material table in dark theme */
+::ng-deep .dark-theme .simple-table .mat-mdc-row:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .simple-table .mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .simple-table .table-row:hover {
+  background-color: #404040 !important;
+}
+
+::ng-deep .dark-theme .simple-table tr.mat-mdc-row:hover td.mat-mdc-cell {
+  background-color: #404040 !important;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.no-data-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #ccc;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.no-data h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.no-data p {
+  margin: 0;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Dark theme for no data */
+.dark-theme .no-data {
+  color: #b0b0b0;
+}
+
+.dark-theme .no-data-icon {
+  color: #666;
+}
+
+.dark-theme .no-data h3 {
+  color: #ffffff;
+}
+
+.dark-theme .no-data p {
+  color: #b0b0b0;
+}
+
+/* Simple Paginator */
+.simple-paginator {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  border-radius: 0 0 8px 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark theme for paginator */
+.dark-theme .simple-paginator {
+  background-color: #3d3d3d;
+  border-top-color: #555;
+}
+
+/* Dark theme for Angular Material paginator elements */
+.dark-theme .mat-mdc-paginator {
+  background-color: #3d3d3d !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-paginator .mat-mdc-select-value,
+.dark-theme .mat-mdc-paginator .mat-mdc-paginator-range-label {
+  color: #ffffff !important;
+}
+
+/* Fix dropdown arrow spacing for dark theme */
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-select {
+  padding-right: 8px !important;
+  min-width: 80px !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-select-trigger {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-form-field {
+  background-color: #ffffff !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-text-field-wrapper {
+  background-color: #ffffff !important;
+  padding-right: 8px !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-select-arrow-wrapper {
+  position: absolute !important;
+  right: 1px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: transparent !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-select-arrow {
+  margin-right: 1px !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-form-field-infix {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-form-field-flex {
+  padding-right: 8px !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-paginator .mat-mdc-select-value-text {
+  padding-right: 4px !important;
+  color: #000000 !important;
+}
+
+/* Dropdown panel styling for dark theme */
+::ng-deep .dark-theme .mat-mdc-select-panel {
+  background-color: #ffffff !important;
+  padding: 8px 0 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-option {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  padding: 12px 16px !important;
+  min-height: 48px !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-option:hover {
+  background-color: #f5f5f5 !important;
+}
+
+::ng-deep .dark-theme .mat-mdc-option.mat-mdc-option-active {
+  background-color: #e3f2fd !important;
+}
+
+.dark-theme .mat-mdc-paginator .mat-mdc-icon-button {
+  color: #ffffff !important;
+}
+
+.dark-theme .mat-mdc-paginator .mat-mdc-icon-button:disabled {
+  color: #666 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search-section {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  
+  .custom-search-wrapper {
+    min-width: 200px;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .search-section {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .custom-search-wrapper {
+    min-width: unset;
+    max-width: unset;
+    flex: 1;
+  }
+
+  .simple-table {
+    font-size: 12px;
+  }
+
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-text h2 {
+    font-size: 20px;
+  }
+
+  .search-section {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  /* Hide some columns on very small screens */
+  .simple-table .mat-column-phone,
+  .simple-table .mat-column-company {
+    display: none;
+  }
+}

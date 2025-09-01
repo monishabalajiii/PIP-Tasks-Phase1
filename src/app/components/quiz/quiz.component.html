@@ -1,0 +1,74 @@
+<div class="quiz-container">
+  <mat-card class="quiz-card">
+    <mat-card-header class="quiz-header">
+      <mat-card-title class="quiz-title">JS Quiz</mat-card-title>
+      <mat-card-subtitle class="quiz-subtitle">Test your JavaScript knowledge!</mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="progress-container">
+      <mat-progress-bar 
+        mode="determinate" 
+        [value]="progressValue"
+        class="progress-bar">
+      </mat-progress-bar>
+    </div>
+
+    <mat-card-content *ngIf="!showResults" class="quiz-content">
+      <div class="question-container">
+        <div class="question-number">Question {{currentQuestion + 1}} of {{quizData.length}}</div>
+        <h2 class="question-text">{{getCurrentQuestion()?.question}}</h2>
+      </div>
+
+      <div class="answers-container">
+        <div 
+          *ngFor="let answer of getCurrentQuestion()?.answers; let i = index"
+          class="answer-option"
+          [class.selected]="selectedAnswer === i"
+          [class.correct]="answered && i === getCurrentQuestion()?.correct"
+          [class.incorrect]="answered && selectedAnswer === i && i !== getCurrentQuestion()?.correct"
+          [class.disabled]="answered"
+          (click)="selectAnswer(i)"
+          matRipple>
+          {{answer}}
+        </div>
+      </div>
+
+      <div class="feedback" [class.show]="showFeedback" [class.correct]="isLastAnswerCorrect" [class.incorrect]="!isLastAnswerCorrect">
+        {{feedbackMessage}}
+      </div>
+
+      <mat-card-actions class="controls">
+        <div class="score-display">
+          Score: {{score}}/{{quizData.length}}
+        </div>
+        <button 
+          mat-raised-button 
+          color="primary"
+          [disabled]="selectedAnswer === null"
+          (click)="nextQuestion()"
+          class="next-btn">
+          <mat-icon *ngIf="currentQuestion === quizData.length - 1">check</mat-icon>
+          <mat-icon *ngIf="currentQuestion < quizData.length - 1">arrow_forward</mat-icon>
+          {{currentQuestion === quizData.length - 1 ? 'Finish Quiz' : 'Next Question'}}
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+
+    <mat-card-content *ngIf="showResults" class="results-container">
+      <div class="results-content">
+        <mat-icon class="results-icon" [class]="getResultsIconClass()">{{getResultsIcon()}}</mat-icon>
+        <h2 class="results-title">Quiz Complete!</h2>
+        <div class="final-score">{{score}}/{{quizData.length}}</div>
+        <p class="results-message">{{resultsMessage}}</p>
+        <button 
+          mat-raised-button 
+          color="primary" 
+          (click)="restartQuiz()"
+          class="restart-btn">
+          <mat-icon>refresh</mat-icon>
+          Restart Quiz
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

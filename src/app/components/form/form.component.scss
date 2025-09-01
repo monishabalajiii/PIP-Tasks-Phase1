@@ -1,0 +1,370 @@
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  background-color: transparent;
+  color: #333;
+}
+
+/* Card */
+.form-card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Mat Input Fields */
+::ng-deep .mat-mdc-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  background-color: #f5f5f5 !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  border: none !important;
+}
+
+::ng-deep .mat-mdc-form-field input {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 16px 0 8px 0 !important;
+}
+
+/* Remove underlines since we want gray background style */
+::ng-deep .mat-mdc-form-field .mat-mdc-line-ripple {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-line-ripple::before {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-line-ripple::after {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-floating-label {
+  color: #666 !important;
+  font-weight: 400 !important;
+  top: 16px !important;
+  left: 12px !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label,
+::ng-deep .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label--float-above {
+  color: #666 !important;
+  top: 8px !important;
+  left: 12px !important;
+  font-size: 12px !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  border: none !important;
+  min-height: 56px !important;
+  background-color: #f5f5f5 !important;
+}
+
+/* Select field styling */
+::ng-deep .mat-mdc-form-field .mat-mdc-select-value {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+  padding: 16px 0 8px 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-select-trigger {
+  background-color: #f5f5f5 !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-select-value-text {
+  color: #333 !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-select-placeholder {
+  color: #999 !important;
+}
+
+/* Ensure select field wrapper has same styling as text inputs */
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select) .mat-mdc-text-field-wrapper {
+  background-color: #f5f5f5 !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  border: none !important;
+}
+
+/* Select field label styling to match other fields */
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select) .mat-mdc-floating-label {
+  color: #666 !important;
+  font-weight: 400 !important;
+  top: 16px !important;
+  left: 12px !important;
+}
+
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select).mat-focused .mat-mdc-floating-label,
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select) .mat-mdc-floating-label.mdc-floating-label--float-above {
+  color: #666 !important;
+  top: 8px !important;
+  left: 12px !important;
+  font-size: 12px !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-select-arrow-wrapper {
+  color: #666 !important;
+}
+
+/* Dropdown panel styling */
+::ng-deep .mat-mdc-select-panel {
+  background-color: #ffffff !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  max-height: 256px !important;
+  z-index: 1000 !important;
+}
+
+::ng-deep .mat-mdc-option {
+  background-color: #ffffff !important;
+  color: #333 !important;
+  padding: 12px 16px !important;
+  min-height: 48px !important;
+}
+
+::ng-deep .mat-mdc-option:hover {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+}
+
+::ng-deep .mat-mdc-option.mdc-list-item--selected {
+  background-color: #e3f2fd !important;
+  color: #1976d2 !important;
+}
+
+/* Ensure dropdown arrow is visible */
+::ng-deep .mat-mdc-select-arrow {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Additional select field consistency */
+::ng-deep .mat-mdc-form-field .mat-mdc-select {
+  background-color: #f5f5f5 !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-select .mat-mdc-select-value {
+  background-color: transparent !important;
+}
+
+/* Remove any conflicting focus or error styling from select when not in error state */
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select):not(.mat-form-field-invalid) .mat-mdc-line-ripple {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select):not(.mat-form-field-invalid) .mat-mdc-line-ripple::before {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-form-field:has(.mat-mdc-select):not(.mat-form-field-invalid) .mat-mdc-line-ripple::after {
+  display: none !important;
+}
+
+/* Error styling - Red underlines only when invalid */
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-line-ripple::before {
+  border-bottom: 1px solid #ff5722 !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-line-ripple::after {
+  border-bottom: 2px solid #ff5722 !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-floating-label {
+  color: #ff5722 !important;
+}
+
+/* Errors - Force red color with multiple selectors */
+.error-text, 
+.mat-error,
+::ng-deep .mat-error,
+::ng-deep .mat-mdc-form-field .mat-error,
+::ng-deep .mat-form-field .mat-error {
+  color: #ff5722 !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+  font-weight: 400 !important;
+}
+
+/* Additional error selectors to override any theme */
+::ng-deep .mat-mdc-form-field-subscript-wrapper .mat-error,
+::ng-deep .mat-mdc-form-field-error-wrapper .mat-error,
+::ng-deep .mat-form-field-subscript-wrapper .mat-error,
+::ng-deep .mat-mdc-form-field-subscript-wrapper,
+::ng-deep .mat-mdc-form-field-hint-wrapper .mat-error {
+  color: #ff5722 !important;
+}
+
+/* Override any inherited text color */
+::ng-deep mat-error,
+::ng-deep .mat-mdc-form-field mat-error,
+::ng-deep .mat-form-field mat-error {
+  color: #ff5722 !important;
+}
+
+/* Red underlines and labels only for invalid fields */
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-text-field-wrapper {
+  border-bottom: 2px solid #ff5722 !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-floating-label {
+  color: #ff5722 !important;
+}
+
+/* Checkbox container */
+.checkbox-container {
+  margin: 10px 0;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.form-actions button {
+  min-width: 120px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+.form-actions button:hover {
+  background-color: #e64a19;
+}
+
+/* Header Actions */
+.header-actions {
+  margin-left: auto; /* push to right */
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+}
+
+mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Auto save status */
+.auto-save-status {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  background: #ff5722;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Toggle FAB */
+.toggle-status-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .auto-save-status {
+    right: 10px;
+    bottom: 80px;
+  }
+
+  .toggle-status-fab {
+    right: 10px;
+  }
+}
+
+.error-text {
+  color: #ff5722;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 0;
+  font-weight: 500;
+}
+
+/* Additional Material Design overrides for red theme */
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-line-ripple::before {
+  border-bottom-color: #ff5722 !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mat-mdc-floating-label {
+  color: #ff5722 !important;
+}
+
+::ng-deep .mat-error {
+  color: #ff5722 !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Select dropdown styling */
+::ng-deep .mat-mdc-select .mat-mdc-select-trigger {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-select .mat-mdc-select-arrow-wrapper {
+  color: #ff5722 !important;
+}

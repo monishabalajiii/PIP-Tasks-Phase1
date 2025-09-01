@@ -1,0 +1,466 @@
+/* ===============================
+   Sidebar (Themed)
+================================= */
+
+/* Sidebar base */
+/* =============.nav-link.active:hover {
+  background: #d1d5db !important;
+  color: #000000;
+}
+
+/* Dark theme active state */
+.dark-theme .nav-link.active {
+  background: #4b5563 !important;
+  color: #000000;
+}
+
+.dark-theme .nav-link.active:hover {
+  background: #4b5563 !important;
+  color: #000000 !important;
+}
+
+/* Additional specificity for black text on active tabs */
+.sidebar .nav-link.active,
+.sidebar .nav-link.active:hover,
+.dark-theme .sidebar .nav-link.active,
+.dark-theme .sidebar .nav-link.active:hover {
+  color: #000000 !important;
+}
+
+/* Ensure link text inside active tabs is also black */
+.nav-link.active .link-text,
+.dark-theme .nav-link.active .link-text {
+  color: #000000 !important;
+}
+
+/* ===============================
+   Sidebar (Themed) - Fixed Icon Layout
+================================= */
+
+/* Sidebar base */
+.sidebar {
+  width: 250px;
+  background: var(--sidebar-bg) !important;
+  color: var(--sidebar-text);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transition: width 0.3s ease, background 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--sidebar-border);
+  min-height: 100vh;
+}
+
+/* Collapsed state */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* Header Section */
+.sidebar .d-flex.justify-content-between {
+  padding: 1rem;
+  border-bottom: 1px solid var(--sidebar-border);
+  margin-bottom: 1rem;
+  height: 60px;
+  align-items: center;
+}
+
+.sidebar h5 {
+  color: var(--sidebar-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed h5 {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.toggle-btn .material-icons {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Navigation List */
+.nav.flex-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nav-item {
+  margin: 0 0 8px 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+}
+
+/* Navigation Links */
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  min-height: 56px;
+  height: 56px;
+  width: calc(100% - 16px);
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.nav-link:hover {
+  background: var(--sidebar-hover);
+  color: var(--sidebar-text);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background: #d1d5db !important;
+  color: #000000 !important;
+  box-shadow: var(--shadow-md);
+  font-weight: 600;
+}
+
+.nav-link.active:hover {
+  background: #d1d5db !important;
+  color: #000000 !important;
+}
+
+/* Dark theme active state */
+.dark-theme .nav-link.active {
+  background: #4b5563 !important;
+  color: #000000 !important;
+}
+
+.dark-theme .nav-link.active:hover {
+  background: #4b5563 !important;
+  color: #cbd5e1;
+}
+
+/* Dark theme text visibility improvements */
+.dark-theme .sidebar {
+  background: var(--sidebar-bg) !important;
+  color: #f1f5f9;
+}
+
+/* Force matching header background in dark theme */
+nav.sidebar,
+nav.sidebar.vh-100,
+.sidebar.p-3,
+.dark-theme nav.sidebar,
+.dark-theme .sidebar.p-3 {
+  background: var(--sidebar-bg) !important;
+  background-color: var(--sidebar-bg) !important;
+}
+
+.dark-theme .sidebar h5 {
+  color: #f8fafc;
+}
+
+.dark-theme .nav-link {
+  color: #e2e8f0;
+}
+
+.dark-theme .nav-link:hover {
+  color: #f8fafc;
+}
+
+.dark-theme .nav-link.active {
+  color: #000000;
+}
+
+/* Material Icons in Nav Links */
+.nav-link .material-icons {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Link Text */
+.link-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, width 0.3s ease;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Collapsed State Adjustments */
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+  padding: 16px;
+  margin: 0 4px;
+  text-align: center;
+  width: calc(100% - 8px);
+  height: 56px;
+  min-height: 56px;
+}
+
+.sidebar.collapsed .nav-item {
+  margin: 0 0 8px 0;
+}
+
+.sidebar.collapsed .nav-link .material-icons {
+  margin-right: 0;
+  margin-left: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar.collapsed .link-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  display: none;
+}
+
+/* Additional collapsed state fixes for perfect alignment */
+.sidebar.collapsed .nav-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sidebar.collapsed .nav-link:hover {
+  transform: none;
+  background: var(--sidebar-hover);
+}
+
+/* Ensure all icons are exactly the same size and position */
+.sidebar.collapsed .material-icons {
+  font-size: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Tooltip for collapsed state */
+.sidebar.collapsed .nav-link {
+  position: relative;
+}
+
+.sidebar.collapsed .nav-link:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-primary);
+  z-index: 1000;
+  margin-left: 8px;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    min-height: auto;
+  }
+  
+  .sidebar.collapsed {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+  }
+  
+  .sidebar.collapsed .nav.flex-column {
+    display: none;
+  }
+}
+
+/* Animation for smooth transitions */
+.sidebar * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+.nav-link:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.toggle-btn:focus {
+  outline: 2px solid var(--text-inverse);
+  outline-offset: 2px;
+}
+
+/* Nav container */
+.sidebar .nav {
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav links */
+.sidebar .nav-link {
+  color: var(--sidebar-link);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* Collapsed state → icon-only */
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+
+.sidebar.collapsed .nav-link .link-text {
+  display: none;
+}
+
+/* Hover effects (with gradient background) */
+.sidebar .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--sidebar-link-active-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.sidebar .nav-link:hover {
+  color: var(--sidebar-link-hover-color);
+  background: var(--sidebar-link-hover-bg);
+  transform: translateX(4px);
+  border-left-color: #1e40af; /* fallback */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active link */
+.sidebar .nav-link.active {
+  background: var(--sidebar-link-active-bg);
+  color: var(--sidebar-link-active-color);
+  font-weight: 600;
+  transform: translateX(6px);
+  border-left-color: var(--sidebar-link-active-color);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.sidebar .nav-link.active::before {
+  opacity: 1;
+}
+
+/* Focus state */
+.sidebar .nav-link:focus {
+  outline: 2px solid var(--sidebar-link-hover-color);
+  outline-offset: -2px;
+}
+
+/* Toggle button */
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--sidebar-toggle-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+  }
+
+  .sidebar .nav-link {
+    padding: 0.6rem 0.8rem;
+    justify-content: flex-start;
+  }
+
+  .sidebar.collapsed .nav-link {
+    justify-content: flex-start;
+    padding: 0.6rem 0.8rem;
+  }
+}

@@ -1,0 +1,129 @@
+/* Pricing Table Theme Styles */
+.pricing-container {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.pricing-card {
+  background: var(--pricing-bg);
+  border: 1px solid var(--pricing-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--primary);
+  position: relative;
+}
+
+.pricing-card.featured::before {
+  content: 'Popular';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--text-inverse);
+  padding: 0.5rem 2rem;
+  border-radius: 0 0 16px 16px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.pricing-title {
+  color: var(--pricing-title);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  color: var(--pricing-price);
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-period {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.pricing-feature {
+  color: var(--pricing-text);
+  padding: 0.75rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-feature::before {
+  content: '✓';
+  color: var(--success);
+  font-weight: bold;
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.pricing-button {
+  background: var(--pricing-button-bg);
+  color: var(--pricing-button-text);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pricing-button:hover {
+  background: var(--pricing-button-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Utility Classes for Pricing */
+.bg-white {
+  background-color: var(--pricing-bg) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--pricing-border) !important;
+}
+
+.text-gray-800 {
+  color: var(--pricing-title) !important;
+}
+
+.text-blue-600 {
+  color: var(--pricing-price) !important;
+}
+
+.text-gray-700 {
+  color: var(--pricing-text) !important;
+}
+
+.bg-blue-600 {
+  background-color: var(--pricing-button-bg) !important;
+  color: var(--pricing-button-text) !important;
+}
+
+.bg-blue-600:hover {
+  background-color: var(--pricing-button-hover) !important;
+}

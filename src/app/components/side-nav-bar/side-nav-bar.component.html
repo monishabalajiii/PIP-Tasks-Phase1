@@ -1,0 +1,58 @@
+<nav class="sidebar vh-100 p-3 d-flex flex-column" [class.collapsed]="isCollapsed">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="text-center m-0" *ngIf="!isCollapsed">Menu</h5>
+    <button class="toggle-btn" (click)="toggleSidebar()">
+      <span class="material-icons">
+        {{ isCollapsed ? 'menu' : 'close' }}
+      </span>
+    </button>
+  </div>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" 
+         routerLink="/pricing-table" 
+         routerLinkActive="active"
+         [attr.data-tooltip]="isCollapsed ? 'Pricing Table' : null">
+        <span class="material-icons">attach_money</span>
+        <span class="link-text" *ngIf="!isCollapsed">Pricing Table</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+         routerLink="/dropdown" 
+         routerLinkActive="active"
+         [attr.data-tooltip]="isCollapsed ? 'Dropdown' : null">
+        <span class="material-icons">arrow_drop_down</span>
+        <span class="link-text" *ngIf="!isCollapsed">Dropdown</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+         routerLink="/quiz" 
+         routerLinkActive="active"
+         [attr.data-tooltip]="isCollapsed ? 'Quiz' : null">
+        <span class="material-icons">quiz</span>
+        <span class="link-text" *ngIf="!isCollapsed">Quiz</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+         routerLink="/form" 
+         routerLinkActive="active"
+         [attr.data-tooltip]="isCollapsed ? 'Form' : null">
+        <span class="material-icons">description</span>
+        <span class="link-text" *ngIf="!isCollapsed">Form</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+         routerLink="/pagination" 
+         routerLinkActive="active"
+         [attr.data-tooltip]="isCollapsed ? 'Pagination' : null">
+        <span class="material-icons">view_list</span>
+        <span class="link-text" *ngIf="!isCollapsed">Pagination</span>
+      </a>
+    </li>
+  </ul>
+</nav>
